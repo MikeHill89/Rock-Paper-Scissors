@@ -7,7 +7,7 @@ function showWinner(){
 	if (playerScore > computerScore){
 		console.log(`You won!`);
 	} else if (playerScore === computerScore){
-		console.log(`It's a tie!`);
+		console.log(`It's a tie!`); // FIX HERE TO PLAY AN ADDITIONAL ROUND TO DETERMINE WINNER. 
 	} else {
 		console.log(`You lost!`);
 	}
