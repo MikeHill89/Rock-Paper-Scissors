@@ -5,11 +5,11 @@ let computerScore = 0; // varaible that can store the points when the computer w
 // function that can be called to show who's the winner of rock paper scissors
 function showWinner(){
 	if (playerScore > computerScore){
-		alert(`You won!`);
+		console.log(`You won!`);
 	} else if (playerScore === computerScore){
-		alert(`It's a tie!`);
+		console.log(`It's a tie!`);
 	} else {
-		alert(`You lost!`);
+		console.log(`You lost!`);
 	}
 }
 
@@ -28,33 +28,39 @@ function playerInput(){
 
 	if (input === 'rock' || input === 'paper' || input === 'scissors'){
 		return input;
+	} else if (input === "" || input === null){
+		console.log('Can not be blank. Please type Rock,Paper or Scissors');
+		return playerInput();
 	} else{
-		alert("Sorry, you need to write rock, paper or scissors");
+		console.log("Sorry, you need to write rock, paper or scissors");
 		return playerInput();
 	}
 }
 
 
-//used in playRound() to console log the score after a round is played
+//usfd in playRound() to console log the score after a round is played
 function showScore(){
-	console.log(`Player has ${playerScore}. Computer score = ${computerScore}`);
+	const scoreMessage = `Player has ${playerScore}. Computer score = ${computerScore}`;
+	console.log(scoreMessage);
 }
 // function that can be called to reset the player, computer to 0 and game score to 5. Log's a message and plays another round.
 function resetGame(){
 	gameScore = 5;
 	playerScore = 0;
 	computerScore = 0;
-	console.log("I did reset");
+	console.info("Let's go again.");
 	playRound();
 }
 
-//useed in playRound to display the amount of games left. If 5 games are played shows the winner and calls the resetGame function
+//used in playRound to display the amount of games left. If 5 games are played shows the winner and calls the resetGame function
 function showGamesLeft(){
 	if (gameScore === 1){
-		console.log('Last game left!');
+		const showLastGame = 'Last game left!';
+		console.warn(showLastGame);
 		playRound();
 	} else if (gameScore > 1){
-	console.log(`${gameScore} games left.`);
+		const showGamesLeft = `${gameScore} games left.`;
+		console.info(showGamesLeft);
 		playRound();
 	} else {
 		showWinner();
@@ -64,20 +70,23 @@ function showGamesLeft(){
 
 //used in playRound() to show a message when the player wins the round. Adds a point to the player score and deducts the gamescore by 1
 function playerWinsRound(){
-	console.log('Player scored a point!');
+	const winMessage = 'Player scored a point!';
+	console.info(winMessage);
 		++playerScore
 		--gameScore
 }
 
 //used in playRound() to show a message when the player loses the round. Adds a point to the computerScore and deducts the gamescore by 1
 function playerLosesRound(){
-	console.log('Computer scored a point!');
+	const loseMessage = 'Computer scored a point!';
+	console.info(loseMessage);
 		++computerScore
 		--gameScore
 }
 //used in playRound() to display a message when it's a tie. Deducts the gamescore by 1.
 function roundIsaTie(){
-	console.log("It's a tie!");
+	const tieMessage = "It's a tie!";
+	console.warn(tieMessage);
 	--gameScore
 }
 
@@ -99,7 +108,8 @@ function roundIsaTie(){
 function playRound(){
 	const computer = computerSelection();
 	const player = playerInput();
-	console.log(`Player chose ${player} and computer chose ${computer}.`)	
+	const match = `Player chose ${player} and computer chose ${computer}.`;
+	console.log(match);
 	if (player === computer){
 		roundIsaTie();
 		showScore();
