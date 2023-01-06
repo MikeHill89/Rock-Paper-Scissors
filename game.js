@@ -5,13 +5,13 @@ let playerScore = 0;
 //write variables named computerScore and set its initial value to 0.
 let computerScore = 0;
 //write a function named computerSelection that picks randomly between rock, paper and scissors and returns the value
-	const weapons = ["rock","paper","scissors"];
+
 function computerSelection(){
+	const weapons = ["rock","paper","scissors"];
 	const randomWeapon = Math.floor(Math.random() * (weapons.length));//generates a randum number between 0 and 2
 	const pickedWeapon = weapons[randomWeapon]; //selects a randomWeapon from the array using the number as position 
 	return pickedWeapon; //returns the pickedWeapon as value
 }
-
 /*write a function called playerInput() that prompts the player to provide an input of either rock,paper or scissors. 
 	
 	If the input is not rock,paper or scissors, display an error message and prompt again. 
