@@ -113,7 +113,7 @@ function resetGame(){
 	“Thanks for playing!”
 */
 while (gameScore >= 1){
-	console.log("The game started!");
+	console.log("A new game round started!");
 	startGame();
 }
 
