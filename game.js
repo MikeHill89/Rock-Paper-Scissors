@@ -93,7 +93,10 @@ function startGame(){
 }
 
 //write a function named resetGame() that resets the gameScore value to 5 and calls the startGame() function.
-
+function resetGame(){
+	gameScore = 5;
+	startGame();
+}
 /*write a while loop that checks while gameScore does not equal 0 start a new Game. 
 	if gameScore reaches 0, then compare playerScore versus computerScore to determine the outcome of the game  
 
