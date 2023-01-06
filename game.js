@@ -7,7 +7,7 @@ function showWinner(){
 	if (playerScore > computerScore){
 		console.log(`You won!`);
 	} else if (playerScore === computerScore){
-		console.log(`Playing the bonus round!`); // FIX HERE TO PLAY AN ADDITIONAL ROUND TO DETERMINE WINNER.
+		console.log(`Playing the addtional bonus round to determine the winner!`);
 		playRound();
 	} else {
 		console.log(`You lost!`);
