@@ -7,7 +7,8 @@ function showWinner(){
 	if (playerScore > computerScore){
 		console.log(`You won!`);
 	} else if (playerScore === computerScore){
-		console.log(`It's a tie!`); // FIX HERE TO PLAY AN ADDITIONAL ROUND TO DETERMINE WINNER. 
+		console.log(`Playing the bonus round!`); // FIX HERE TO PLAY AN ADDITIONAL ROUND TO DETERMINE WINNER.
+		playRound();
 	} else {
 		console.log(`You lost!`);
 	}
@@ -62,7 +63,10 @@ function showGamesLeft(){
 		const showGamesLeft = `${gameScore} games left.`;
 		console.info(showGamesLeft);
 		playRound();
-	} else {
+	} else if (gameScore === 0 && (playerScore === computerScore)) {
+			console.warn('An extra round needs to be played to determine the winner');
+			showWinner();
+		}else {
 		showWinner();
 		resetGame();
 	}
@@ -85,7 +89,7 @@ function playerLosesRound(){
 }
 //used in playRound() to display a message when it's a tie. Deducts the gamescore by 1.
 function roundIsaTie(){
-	const tieMessage = "It's a tie!";
+	const tieMessage = "The round was a tie!";
 	console.warn(tieMessage);
 	--gameScore
 }
@@ -109,19 +113,38 @@ function playRound(){
 	const computer = computerSelection();
 	const player = playerInput();
 	const match = `Player chose ${player} and computer chose ${computer}.`;
+	
 	console.log(match);
-	if (player === computer){
-		roundIsaTie();
-		showScore();
-		showGamesLeft();
-	} else if (player === 'rock' && computer === 'scissors' || player === 'paper' && computer === 'rock' || player === 'scissors' && computer === 'paper'){
-		playerWinsRound();
-		showScore();
-		showGamesLeft();
+	
+	if (gameScore === 0 && (playerScore === computerScore)){
+		if (player === computer){
+			roundIsaTie();
+			showScore();
+			showGamesLeft();
+		} else if (player === 'rock' && computer === 'scissors' || player === 'paper' && computer === 'rock' || player === 'scissors' && computer === 'paper'){
+			playerWinsRound();
+			showScore();
+			showGamesLeft();
+		} else {
+			playerLosesRound();
+			showScore();
+			showGamesLeft();
+		}
 	} else {
-		playerLosesRound();
-		showScore();
-		showGamesLeft();
+			if (player === computer){
+				roundIsaTie();
+				showScore();
+				showGamesLeft();
+			} else if (player === 'rock' && computer === 'scissors' || player === 'paper' && computer === 'rock' || player === 'scissors' && computer === 'paper'){
+				playerWinsRound();
+				showScore();
+				showGamesLeft();
+			} else {
+				playerLosesRound();
+				showScore();
+				showGamesLeft();
+		}
 	}
 }
+
 playRound();
