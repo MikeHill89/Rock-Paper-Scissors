@@ -39,7 +39,7 @@ function playerInput(){
 function showScore(){
 	console.log(`Player has ${playerScore}. Computer score = ${computerScore}`);
 }
-
+// function that can be called to reset the player, computer to 0 and game score to 5. Log's a message and plays another round.
 function resetGame(){
 	gameScore = 5;
 	playerScore = 0;
