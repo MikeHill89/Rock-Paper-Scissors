@@ -42,10 +42,13 @@ function playerInput(){
 	If playerSelection is rock and computerSelection is Paper OR if playerSelection is paper and computerSelection is scissors 
 	OR if playerSelection is scissors and computerSelection is rock then output a message that the player lost.
 	Add a point to the computerScore and Subtract 1 from the gameScore variable and return.*/
+
+//used in startGame()
 function showScore(){
 	console.log(`Player has ${playerScore}. Computer score = ${computerScore}`);
 }
 
+//used in startGame()
 function showGamesLeft(){
 	if (gameScore === 1){
 		console.log('Last game left!');
@@ -54,17 +57,20 @@ function showGamesLeft(){
 	}
 }
 
+//used in startGame()
 function playerWinsRound(){
 	console.log('Player scored a point!');
 		++playerScore
 		--gameScore
 }
 
+//used in startGame()
 function playerLosesRound(){
 	console.log('Computer scored a point!');
 		++computerScore
 		--gameScore
 }
+//used in startGame()
 function roundIsaTie(){
 	console.log("It's a tie!");
 	--gameScore
@@ -87,8 +93,6 @@ function startGame(){
 		showScore();
 		showGamesLeft();
 	}
-
-
 }
 
 //write a function named resetGame() that resets the gameScore value to 5 and calls the startGame() function.
@@ -96,7 +100,6 @@ function resetGame(){
 	gameScore = 5;
 	console.log('The game was reset! Enjoy another 5 rounds!');
 	startGame();
-
 }
 /*write a while loop that checks while gameScore does not equal 0 start a new Game. 
 	if gameScore reaches 0, then compare playerScore versus computerScore to determine the outcome of the game  
@@ -109,4 +112,21 @@ function resetGame(){
 	If the prompt is cancelled or exited out using the ESC key on the keyboard, display a console log showing a message saying 
 	“Thanks for playing!”
 */
+while (gameScore >= 1){
+	console.log("The game started!");
+	startGame();
+}
+
+// there's a bug here. gameScore reaches 0, calls resetGame() but playerScore and computerScore is also reset and equals.
+if (playerScore === computerScore){
+	alert(`It's a tie!, ${computerScore} vs ${playerScore}. Restarting Game!`);
+	resetGame();
+} else if(playerScore >= computerScore){
+	alert(`You won the game, ${playerScore} vs ${computerScore}. Restarting Game!`);
+	resetGame();
+} else {
+	alert(`You lost the game. Computer had ${computerScore} vs ${playerScore}. Restarting Game!`);
+	resetGame();
+}
+
 
