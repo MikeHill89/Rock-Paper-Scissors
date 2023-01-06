@@ -54,14 +54,14 @@ function resetGame(){
 }
 
 //used in playRound to display the amount of games left. If 5 games are played shows the winner and calls the resetGame function
-function showGamesLeft(){
+function showRoundsLeft(){
 	if (gameScore === 1){
-		const showLastGame = 'Last game left!';
-		console.warn(showLastGame);
+		const showLastRound = 'Last round left!';
+		console.warn(showLastRound);
 		playRound();
 	} else if (gameScore > 1){
-		const showGamesLeft = `${gameScore} games left.`;
-		console.info(showGamesLeft);
+		const showRoundsLeft = `${gameScore} round left.`;
+		console.info(showRoundsLeft);
 		playRound();
 	} else if (gameScore === 0 && (playerScore === computerScore)) {
 			console.warn('An extra round needs to be played to determine the winner');
@@ -120,29 +120,29 @@ function playRound(){
 		if (player === computer){
 			roundIsaTie();
 			showScore();
-			showGamesLeft();
+			showRoundsLeft();
 		} else if (player === 'rock' && computer === 'scissors' || player === 'paper' && computer === 'rock' || player === 'scissors' && computer === 'paper'){
 			playerWinsRound();
 			showScore();
-			showGamesLeft();
+			showRoundsLeft();
 		} else {
 			playerLosesRound();
 			showScore();
-			showGamesLeft();
+			showRoundsLeft();
 		}
 	} else {
 			if (player === computer){
 				roundIsaTie();
 				showScore();
-				showGamesLeft();
+				showRoundsLeft();
 			} else if (player === 'rock' && computer === 'scissors' || player === 'paper' && computer === 'rock' || player === 'scissors' && computer === 'paper'){
 				playerWinsRound();
 				showScore();
-				showGamesLeft();
+				showRoundsLeft();
 			} else {
 				playerLosesRound();
 				showScore();
-				showGamesLeft();
+				showRoundsLeft();
 		}
 	}
 }
