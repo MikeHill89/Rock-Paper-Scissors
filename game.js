@@ -20,11 +20,10 @@ function playerInput(){
 	input = input.toLowerCase();
 
 	if (input === 'rock' || input === 'paper' || input === 'scissors'){
-		let matchedInput = "Player chose: ";
 		return input;
 	} else{
-		let displayInputError = "Sorry, you need to write rock, paper or scissors";
-		return displayInputError;
+		alert("Sorry, you need to write rock, paper or scissors");
+		return playerInput();
 	}
 }
 
@@ -95,7 +94,9 @@ function startGame(){
 //write a function named resetGame() that resets the gameScore value to 5 and calls the startGame() function.
 function resetGame(){
 	gameScore = 5;
+	console.log('The game was reset! Enjoy another 5 rounds!');
 	startGame();
+
 }
 /*write a while loop that checks while gameScore does not equal 0 start a new Game. 
 	if gameScore reaches 0, then compare playerScore versus computerScore to determine the outcome of the game  
