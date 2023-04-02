@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Rock Paper Scissors</title>
-		<script type="text/javascript" src="gamev2.js"></script>
-	</head>
 
-	<body>
-		<h1>Rock Paper Scissors</h1>
-	</body>
+<head>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/game.js" defer></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>Rock Paper Scissors</h1>
+    <div class="container">
+      <h2>Select your weapon</h2>
+      <div class="weapons">
+        <button type="button" id="rock">Rock</button>
+        <button type="button" id="paper">Paper</button>
+        <button type="button" id="scissors">Scissors</button>
+      </div>
+      <div class="results">
+        <h3>Results</h3>
+      </div>
+      <h3>Scoreboard</h3>
+      <div class="scoreboard">
+      </div>
+    </div>
+    <div class="gameover">
+      <h3>Game Over</h3>
+      <h4 id='endresult'></h4>
+      <button id="reset">Play Again?</button>
+    </div>
+  </div>
+</body>
+
 </html>

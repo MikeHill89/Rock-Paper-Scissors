@@ -1,7 +1,7 @@
 //Decided to start from scratch again to incorporate the for loop alghoritm.
 
 //write a variable named maxRounds.
-let maxRounds = 5;
+let maxRounds = 0;
 //write a variable named playerScore and set its initial value to 0
 let playerScore = 0;
 //write variables named computerScore and set its initial value to 0.
@@ -77,7 +77,7 @@ function startRound() {
 //write a forloop that calls startRound() 5x
 for (let i = 1; i <= maxRounds; i++){
   console.log(`This is round ${i}`);
-    startRound();
+//    startRound();
 }
 
 /*write a function showWinner that runs when gameScore = 0. The function compares playerScore versus computerScore and shows a message based on the following conditions.
@@ -96,13 +96,13 @@ function determineWinner (){
     alert("Computer won the game!");
   }
 }
-determineWinner();
+//determineWinner();
 //write a function that resets the game
 function resetGame() {
   playerScore = 0;
   computerScore = 0;
-  alert("The game has been reset!");
-  startRound();
+  //alert("The game has been reset!");
+  //startRound();
 }
 
 resetGame();
