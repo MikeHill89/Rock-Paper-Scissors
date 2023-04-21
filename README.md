@@ -1,5 +1,8 @@
 # Rock Paper Scissors Rock Paper Scissors Project from The Odin Project
 
+The live version can be found at:
+https://mikehill89.github.io/Rock-Paper-Scissors
+
 ## What did I learn?
 
 - Understand JavaScript fundamentals (variables, conditionals, functions, loops,
@@ -15,7 +18,7 @@
 The Rock Paper Scissors assignment from The Odin Project was a great opportunity
 for me to learn and practice some of the fundamental concepts of JavaScript.
 Through this project, I was able to understand how to use variables,
-conditional statements, functions, loops, and arrays to create a simple and
+conditional statements, functions, loops, and arrays to create a simple and 
 interactive game.
 
 By building this game, I was able to develop my problem-solving skills and
